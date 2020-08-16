@@ -45,7 +45,7 @@
                     <h2 class="mb-5">Wie ben ik ?</h2>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <p>Hallo, ik ben Katia Gielis, kortweg Juf Katia, leerkracht in de lagere school en trotse mama van 4 zonen. Ik heb ervaring als leerkracht, zorgleerkracht en zorgcoördinator. 
+                            <p>Hallo, ik ben Katia Gielis, oftewel juf Katia, leerkracht in de lagere school en trotse mama van 4 zonen. Ik heb ervaring als leerkracht, zorgleerkracht en zorgcoördinator. 
 Na meer dan 10 jaar voor de klas, kies ik ervoor om mij naast mijn job als leerkracht in de school ook op een andere manier in te zetten voor kinderen, alleen of in kleine groepjes, en ze te begeleiden in de verschillende stappen van het leerproces.</p>
 							<p>Samen met uw kind ga ik op ontdekkingstocht. Samen rekenen, schrijven, lezen, … kortom alles wat met de schoolse activiteiten te maken heeft. Naast het schoolse hecht ik ook veel belang aan het welbevinden van uw kind. Samen werken op een speelse manier, blijven zoeken naar de gepaste aanpak voor elk kind apart, blijft me fascineren.</p>
 							<p>Binnenkort start ik ook met de opleiding ‘de magie van kindercoaching’.</p> 
@@ -117,41 +117,8 @@ Na meer dan 10 jaar voor de klas, kies ik ervoor om mij naast mijn job als leerk
                         <a href="mailto:info@uiltjewijzer.be">info@uiltjewijzer.be</a>
                     </div>
 					<!-- Contact form-->
-					<p class="mb-3">Stuur mij een <a href="mailto:info@uiltjewijzer.be">mailtje</a>, bel mij of gebruik onderstaand contactformulier.</p>
-					<div class="row">
-						<!--Grid column-->
-						<div class="col-md-9 mb-md-0 mb-5">
-						<form action="https://formspree.io/xeqrdyag" method="POST">
-								<!--Grid row-->
-								<div class="row">
-
-
-								<!--Grid column-->
-								<div class="col-md-6">
-									<div class="md-form mb-0">
-										<label for="email" class="">Uw email-adres</label>
-										<input type="text" name="_replyto" class="form-control">
-									</div>
-								</div>
-								</div>
-
-								<!--Grid row-->
-								<div class="row">
-									<!--Grid column-->
-									<div class="col-md-12">
-										<div class="md-form">
-											<label for="message">Bericht</label>
-											<textarea type="text" id="message" name="message" rows="4" class="form-control md-textarea"></textarea>
-										</div>
-									</div>
-								</div>
-								<!--Grid row-->
-							</form>
-							<p class="lead mb-2"></p>
-							<div class="text-center text-md-left">
-							<button type="submit" class="btn btn-primary" style="color:#fff;">Verstuur</button>
-						</div>
-					</div>					
+					<p class="mb-3">Stuur mij een <a href="mailto:info@uiltjewijzer.be">mailtje</a> of bel mij.</p>
+				
 					<!-- Google map-->
 					<p class="lead mb-5"></p>
 					<div id="map-container-google-1" class="z-depth-1-half map-container" style="width:100%">
@@ -173,60 +140,5 @@ Na meer dan 10 jaar voor de klas, kies ik ervoor om mij naast mijn job als leerk
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-		<script>
-			function validateForm() {
-				  var name =  document.getElementById('name').value;
-				  if (name == "") {
-					  document.querySelector('.status').innerHTML = "Vul uw naam in a.u.b.";
-					  return false;
-				  }
-				  var email =  document.getElementById('email').value;
-				  if (email == "") {
-					  document.querySelector('.status').innerHTML = "Vul uw email-adres in a.u.b.";
-					  return false;
-				  } else {
-					  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-					  if(!re.test(email)){
-						  document.querySelector('.status').innerHTML = "Ongeldig email-adres";
-						  return false;
-					  }
-				  }
-				  var subject =  document.getElementById('subject').value;
-				  if (subject == "") {
-					  document.querySelector('.status').innerHTML = "Vul een onderwerp in a.u.b.";
-					  return false;
-				  }
-				  var message =  document.getElementById('message').value;
-				  if (message == "") {
-					  document.querySelector('.status').innerHTML = "Vul een bericht in a.u.b.";
-					  return false;
-				  }
-				document.getElementById('status').innerHTML = "Uw bericht wordt verstuurd ...";
-				formData = {
-				'name'     : $('input[name=name]').val(),
-				'email'    : $('input[name=email]').val(),
-				'subject'  : $('input[name=subject]').val(),
-				'message'  : $('textarea[name=message]').val()
-				};
-
-
-				$.ajax({
-				url : "mail.php",
-				type: "POST",
-				data : formData,
-				success: function(data, textStatus, jqXHR)
-				{
-
-				$('#status').text(data.message);
-				if (data.code) //If mail was sent successfully, reset the form.
-				$('#contact-form').closest('form').find("input[type=text], textarea").val("");
-				},
-				error: function (jqXHR, textStatus, errorThrown)
-				{
-				$('#status').text(jqXHR);
-				}
-				});
-			}
-		</script>
     </body>
 </html>
